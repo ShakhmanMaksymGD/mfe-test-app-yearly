@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Yearly Planning</h2>
+    <h2 class="title">Yearly Planning</h2>
     <br/>
     <v-data-table :items :sort-by="store.sortBy" @update:sort-by="store.setSortBy" />
   </div>
@@ -110,5 +110,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.title {
+  color: fuchsia;
+}
 </style>
