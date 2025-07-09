@@ -9,7 +9,7 @@ import vitePluginSingleSpa from 'vite-plugin-single-spa'
 import externalize from "vite-plugin-externalize-dependencies"
 import fs from 'fs'
 import path from 'path'
-import versionCleanup from '../mfe-test-scripts/plugins/version-cleanup'
+import versionCleanup from 'mfe-test-scripts/plugins/version-cleanup'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf8'))
