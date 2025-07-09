@@ -9,6 +9,7 @@
     "build": "vite build && node ../mfe-test-scripts/update-env-remote-versions.js",
     "build:watch": "vite build --watch",
     "preview": "vite preview --port 4104 --strictPort",
+    "prebuild": "vite build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
