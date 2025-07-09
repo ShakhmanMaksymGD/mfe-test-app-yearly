@@ -3,18 +3,15 @@ name: Yearly CI
 on:
   pull_request:
     paths:
-      - 'src/**'
+      - '**'
   
 jobs:
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 20
+      - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -23,15 +20,12 @@ jobs:
         run: npm cache clean --force
 
       - name: Install Deps
-        run: npm ci
+        run: npm --loglevel verbose ci
 
       - name: Lint
         run: npm run lint
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v3
 
@@ -39,6 +33,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      
+      - name: Install npm@latest
+        run: npm install -g npm@latest
 
       - name: Clean npm cache
         run: npm cache clean --force
