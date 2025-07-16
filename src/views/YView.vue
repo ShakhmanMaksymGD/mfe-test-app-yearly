@@ -111,6 +111,6 @@
 
 <style lang="scss" scoped>
 h2 {
-  color: green;
+  color: purple;
 }
 </style>
